@@ -6,6 +6,7 @@ local M = {
   lines = require("luadiff.lines"),
   unified = require("luadiff.unified"),
   patch = require("luadiff.patch"),
+  merge = require("luadiff.merge"),
 }
 
 --- Diff any two arrays of comparable values (characters, tokens...).
@@ -24,5 +25,8 @@ M.parse_patch = M.unified.parse
 
 --- Apply unified diff text to a string.
 M.apply_patch = M.patch.apply
+
+--- Three-way merge of strings: merge3(base, ours, theirs, opts).
+M.merge3 = M.merge.merge
 
 return M
