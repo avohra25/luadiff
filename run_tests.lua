@@ -3,7 +3,7 @@ local dir = arg[0]:match("^(.*)/[^/]*$") or "."
 package.path = dir .. "/src/?.lua;" .. dir .. "/src/?/init.lua;" .. dir .. "/tests/?.lua;" .. package.path
 
 local H = require("harness")
-local files = { "test_myers", "test_text" }
+local files = { "test_myers", "test_text", "test_unified", "test_patch" }
 for _, f in ipairs(files) do
   local before = H.passed + H.failed
   require(f)
